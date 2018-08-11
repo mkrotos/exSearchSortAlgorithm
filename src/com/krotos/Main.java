@@ -23,6 +23,18 @@ public class Main {
         System.out.println("Binary search 1: "+ findB.search(9,sortedIntTab));
 
         System.out.println("Binary search 2: "+ findB.search(7,difSortedTab));
+
+        Person[] tabPer=new Person[7];
+        tabPer[0]=new Person("Adam", "Nowak", 12);
+        tabPer[1]=new Person("Pawel", "Nowyumysrak", 13);
+        tabPer[2]=new Person("asda", "myumy", 14);
+        tabPer[3]=new Person("dgdf", "sdrgs", 15);
+        tabPer[4]=new Person("rhthrth", "Nosrgsdrwak", 22);
+        tabPer[5]=new Person("hrwe", "sgraraae", 33);
+        tabPer[6]=new Person("myyumy", "Nowsefseak", 44);
+        findPersonByAge(15,tabPer);
+
+
     }
 
      static private int middleIndex(Integer[] tab){
@@ -46,5 +58,14 @@ public class Main {
         for(int i=b;i<tab.length;i++){
             System.out.println(tab[i]);
         }
+    }
+    static void findPersonByAge(int val,Person[] tabP){
+        SearchAlgorithm find=new LinearSearch();
+        Integer[] tabInt=new Integer[tabP.length];
+        for(int i=0;i<tabP.length;i++){
+            tabInt[i]=tabP[i].age;
+        }
+        int index=find.search(val,tabInt);
+        System.out.println(tabP[index]);
     }
 }

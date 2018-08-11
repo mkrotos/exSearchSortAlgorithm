@@ -1,5 +1,10 @@
 package com.krotos;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -9,7 +14,8 @@ public class Main {
         System.out.println("Search: "+ find.search(2,tabInt));
 
         System.out.println( middleIndex(tabInt));
-        printToIndA(3,tabInt);
+        Integer[] tabA= printToIndA(3,tabInt);
+        System.out.println("tab a: "+ Arrays.toString(tabA));
         printFromIndB(7,tabInt);
     }
 
@@ -17,11 +23,17 @@ public class Main {
         return  tab.length/2;
     }
 
-    static private void printToIndA(int a, Integer[] tab){
+    static private Integer[] printToIndA(int a, Integer[] tab){
+
+        List<Integer> tempList=new ArrayList<>();
         System.out.println("to a");
         for(int i=0;i<=a;i++){
             System.out.println(tab[i]);
+            tempList.add(tab[i]);
         }
+        Integer[]  tab2=new Integer[tempList.size()];
+        tab2= tempList.toArray(tab2);
+        return tab2;
     }
     static private void printFromIndB(int b, Integer[]  tab){
         System.out.println("from b");

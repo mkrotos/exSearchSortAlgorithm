@@ -10,20 +10,40 @@ public class BinarySearch implements SearchAlgorithm {
 
     @Override
     public Integer search(Integer value, Integer[] input) {
-        return binarySearchRec(input, value, 0, input.length - 1);
+        if(input[0]<input[1]) {
+            System.out.println("Asc");
+            return binarySearchAscendRec(input, value, 0, input.length - 1);
+        }else {
+            System.out.println("Desc");
+            return binarySearchDescendRec(input,value,0,input.length-1);
+        }
 
     }
 
 
-    private int binarySearchRec(Integer[] tab, int value, int low, int high) {
+    private int binarySearchAscendRec(Integer[] tab, int value, int low, int high) {
         if (high < low) {
             return -1;
         }
         int mid = (low + high) / 2;
         if (tab[mid] > value) {
-            return binarySearchRec(tab, value, low, mid - 1);
+            return binarySearchAscendRec(tab, value, low, mid - 1);
         } else if (tab[mid] < value) {
-            return binarySearchRec(tab, value, mid + 1, high);
+            return binarySearchAscendRec(tab, value, mid + 1, high);
+        } else {
+            return mid;
+        }
+    }
+    private int binarySearchDescendRec(Integer[] tab, int value, int low, int high) {
+        if (high < low) {
+            return -1;
+        }
+        int mid = (low + high) / 2;
+        //System.out.println("mid:"+mid);
+        if (tab[mid] < value) {
+            return binarySearchDescendRec(tab, value, low, mid - 1);
+        } else if (tab[mid] > value) {
+            return binarySearchDescendRec(tab, value, mid + 1, high);
         } else {
             return mid;
         }

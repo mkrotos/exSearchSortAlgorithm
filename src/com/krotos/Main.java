@@ -1,6 +1,5 @@
 package com.krotos;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Integer[] tabInt={123,4,2,235,5,23,2,3,2,6,45,7,4};
+        Integer[] tabInt={123,4,2,235,5,23,3,6,45,7};
         SearchAlgorithm find=new LinearSearch();
         System.out.println("Search: "+ find.search(2,tabInt));
 
@@ -17,6 +16,11 @@ public class Main {
         Integer[] tabA= printToIndA(3,tabInt);
         System.out.println("tab a: "+ Arrays.toString(tabA));
         printFromIndB(7,tabInt);
+
+        Integer[] sortedIntTab={1,3,4,6,7,8,9,12};
+        Integer[] difSortedTab={8,7,5,4,3,2,0};
+        SearchAlgorithm findB=new BinarySearch();
+        System.out.println("Binary search: "+ findB.search(7,difSortedTab));
     }
 
      static private int middleIndex(Integer[] tab){

@@ -36,25 +36,24 @@ public class Main {
 
         findPerson("dgdf", 13, tabPer);
         //Sort
-        int[] tabInt2={12,22,13,14,55,16};
-        Wstep wstep=new Wstep();
-        wstep.zamiana(tabInt2,1,2);
-        System.out.println("Tab: "+ Arrays.toString( tabInt2));
+        int[] tabInt2 = {12, 22, 13, 14, 55, 16};
+        Wstep wstep = new Wstep();
+        wstep.zamiana(tabInt2, 1, 2);
+        System.out.println("Tab: " + Arrays.toString(tabInt2));
         wstep.wypiszZIndeksem(tabInt2);
         wstep.wypiszJakKwadrat(tabInt2);
         System.out.println("Z zamianą: ");
         wstep.wypiszJakWyzejZZamiana(tabInt2);
 
         System.out.println("Bubble sort ");
-        BubbleSort bubbleSort=new BubbleSort();
+        BubbleSort bubbleSort = new BubbleSort();
         System.out.println(Arrays.toString(bubbleSort.sort(tabInt)));
 
         System.out.println("Bubel 2");
-        BubbleSort2 bubbleSort2=new BubbleSort2();
+        BubbleSort2 bubbleSort2 = new BubbleSort2();
         bubbleSort2.dispTest(tabInt2);
         Integer[] tabInt3 = {123, 4, 2, 235, 5, 23, 3, 6, 45, 7};
-        System.out.println("Bubel 2 sort: "+Arrays.toString(bubbleSort2.sort(tabInt3)));
-
+        System.out.println("Bubel 2 sort: " + Arrays.toString(bubbleSort2.sort(tabInt3)));
 
 
     }

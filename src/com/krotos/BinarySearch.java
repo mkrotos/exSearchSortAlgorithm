@@ -12,7 +12,7 @@ public class BinarySearch implements SearchAlgorithm {
     public Integer search(Integer value, Integer[] input) {
         if (input[0] < input[1]) {
             System.out.println("Asc");
-            System.out.println("Iter: "+ binarySearchAscendIter(input,value));
+            System.out.println("Iter: " + binarySearchAscendIter(input, value));
             return binarySearchAscendRec(input, value, 0, input.length - 1);
         } else {
             System.out.println("Desc");
@@ -52,16 +52,16 @@ public class BinarySearch implements SearchAlgorithm {
     }
 
     private int binarySearchAscendIter(Integer[] tab, int value) {
-        int low=0;
-        int high=tab.length-1;
+        int low = 0;
+        int high = tab.length - 1;
         int mid;
-        while (low<=high){
-            mid=(low+high)/2;
-            if(tab[mid]>value){
-                high=mid-1;
-            }else if(tab[mid]<value){
-                low=mid+1;
-            }else {
+        while (low <= high) {
+            mid = (low + high) / 2;
+            if (tab[mid] > value) {
+                high = mid - 1;
+            } else if (tab[mid] < value) {
+                low = mid + 1;
+            } else {
                 return mid;
             }
         }

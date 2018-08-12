@@ -33,8 +33,8 @@ public class Main {
         tabPer[5] = new Person("hrwe", "sgraraae", 33);
         tabPer[6] = new Person("myyumy", "Nowsefseak", 44);
         findPersonByAge(15, tabPer);
-
         findPerson("dgdf", 13, tabPer);
+
         //Sort
         int[] tabInt2 = {12, 22, 13, 14, 55, 16};
         Wstep wstep = new Wstep();
@@ -57,7 +57,7 @@ public class Main {
 
         System.out.println("Selection sort");
         SelectionSort selectionSort=new SelectionSort();
-        Integer[] tabInt4 = {123, 4, 2, 235, 5, 23, 3, 6, 45, 7};
+        Integer[] tabInt4 = {123, 4, 2, 235, 5, 23, 3};
         System.out.println(Arrays.toString(tabInt4));
         System.out.println("min:"+ selectionSort.findMin(tabInt4));
         selectionSort.findMinBetween(tabInt4,3,5);
@@ -65,8 +65,11 @@ public class Main {
 
         System.out.println("Merge sort");
         MergeSort mergeSort=new MergeSort();
-
-
+        Integer[] tabInt5 = {123, 4, 2, 235, 5, 23, 3, 6, 45};
+        mergeSort.divideTab(tabInt5);
+        System.out.println("tab3: "+Arrays.toString(tabInt3));
+        System.out.println("tab4: "+Arrays.toString(tabInt4));
+        mergeSort.mergeSortedTabs(tabInt3, tabInt4);
 
     }
 

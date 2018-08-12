@@ -52,6 +52,8 @@ public class Main {
         System.out.println("Bubel 2");
         BubbleSort2 bubbleSort2=new BubbleSort2();
         bubbleSort2.dispTest(tabInt2);
+        Integer[] tabInt3 = {123, 4, 2, 235, 5, 23, 3, 6, 45, 7};
+        System.out.println("Bubel 2 sort: "+Arrays.toString(bubbleSort2.sort(tabInt3)));
 
 
 

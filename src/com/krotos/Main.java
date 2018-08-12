@@ -61,6 +61,8 @@ public class Main {
         System.out.println(Arrays.toString(tabInt4));
         System.out.println("min:"+ selectionSort.findMin(tabInt4));
         selectionSort.findMinBetween(tabInt4,3,5);
+        System.out.println("Selection sort: "+ Arrays.toString(selectionSort.sort(tabInt4)));
+
 
     }
 

@@ -43,10 +43,15 @@ public class Main {
         wstep.wypiszZIndeksem(tabInt2);
         wstep.wypiszJakKwadrat(tabInt2);
         System.out.println("Z zamianą: ");
-        wstep.wypiszJakWyżejZZamiana(tabInt2);
+        wstep.wypiszJakWyzejZZamiana(tabInt2);
 
+        System.out.println("Bubble sort ");
         BubbleSort bubbleSort=new BubbleSort();
         System.out.println(Arrays.toString(bubbleSort.sort(tabInt)));
+
+        System.out.println("Bubel 2");
+        BubbleSort2 bubbleSort2=new BubbleSort2();
+        bubbleSort2.dispTest(tabInt2);
 
 
 

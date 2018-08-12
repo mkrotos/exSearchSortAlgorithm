@@ -27,7 +27,7 @@ public class Wstep {
         }
     }
 
-    public void wypiszJakWyżejZZamiana(int[] tab) {
+    public void wypiszJakWyzejZZamiana(int[] tab) {
         for (int j = 0; j < tab.length; j++) {
             for (int i = 0; i < tab.length; i++) {
                 System.out.print(i + ": " + tab[i] + " | ");

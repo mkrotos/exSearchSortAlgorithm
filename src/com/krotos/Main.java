@@ -63,6 +63,10 @@ public class Main {
         selectionSort.findMinBetween(tabInt4,3,5);
         System.out.println("Selection sort: "+ Arrays.toString(selectionSort.sort(tabInt4)));
 
+        System.out.println("Merge sort");
+        MergeSort mergeSort=new MergeSort();
+
+
 
     }
 

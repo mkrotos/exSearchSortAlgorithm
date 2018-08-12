@@ -22,7 +22,6 @@ public class SelectionSort implements SortingAlgorithm {
             int temp = input[i];
             input[i] = min;
             input[ind] = temp;
-
         }
         return input;
     }
@@ -46,7 +45,7 @@ public class SelectionSort implements SortingAlgorithm {
                 ind = i;
             }
         }
-        //System.out.println("index: "+ind+", min between: "+min);
+        System.out.println("index: "+ind+", min between: "+min);
         return min;
     }
 }

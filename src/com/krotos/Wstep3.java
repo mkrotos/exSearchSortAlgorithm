@@ -1,9 +1,7 @@
 package com.krotos;
 
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Wstep3 {
     private int randEl;
@@ -47,7 +45,6 @@ public class Wstep3 {
         List<Integer> midList=new ArrayList<>();
         List<Integer> higherList=new ArrayList<>();
         List<Integer> finalList=new ArrayList<>();
-
 
         midList=Arrays.asList(tab).stream().filter(el->el==midEl).collect(Collectors.toList());
         lowerList=Arrays.asList(tab).stream().filter(el->el<midEl).collect(Collectors.toList());

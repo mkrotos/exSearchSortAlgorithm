@@ -75,19 +75,24 @@ public class Main {
 
         System.out.println("Wstep 2");
         Wstep2 wstep2 = new Wstep2();
-        System.out.println("zad1: "+wstep2.removeDuplicateAndSort(Arrays.asList(tabInt5.clone())));
+        System.out.println("zad1: " + wstep2.removeDuplicateAndSort(Arrays.asList(tabInt5.clone())));
         System.out.println("zad2: ");
         wstep2.sortCars();
         wstep2.zad3();
 
         System.out.println("Wstep 3");
-        System.out.println("tab: "+ Arrays.toString(tabInt5));
-        Wstep3 wstep3=new Wstep3();
+        System.out.println("tab: " + Arrays.toString(tabInt5));
+        Wstep3 wstep3 = new Wstep3();
         wstep3.findMid(tabInt5);
         wstep3.randomEl(tabInt5);
-        System.out.println("zad 3: "+ Arrays.toString(wstep3.lowerTab(tabInt5.clone())));
-        System.out.println("zad 4: "+ Arrays.toString(wstep3.higherTab(tabInt5.clone())));
+        System.out.println("zad 3: " + Arrays.toString(wstep3.lowerTab(tabInt5.clone())));
+        System.out.println("zad 4: " + Arrays.toString(wstep3.higherTab(tabInt5.clone())));
         wstep3.nearlySort(tabInt5.clone());
+
+        System.out.println("Quick sort");
+        QuickSort quickSort = new QuickSort();
+        System.out.println("tab5: "+Arrays.toString(tabInt5));
+        System.out.println(Arrays.toString(quickSort.sort(tabInt5.clone())));
 
     }
 

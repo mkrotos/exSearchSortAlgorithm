@@ -101,6 +101,14 @@ public class Main {
         System.out.println( binaryTree.getFatherInd(3));
         System.out.println( binaryTree.getRightSonInd(3));
         System.out.println( binaryTree.isLeaf(8));
+        System.out.println( binaryTree.isFatherBiger(8));
+
+        //System.out.println(binaryTree.);
+
+        System.out.println("Heap sort");
+        HeapSort heapSort=new HeapSort();
+        System.out.println(Arrays.toString(heapSort.sort(tabInt5.clone())));
+
 
 
     }

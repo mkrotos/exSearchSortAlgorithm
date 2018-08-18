@@ -78,6 +78,7 @@ public class Main {
         System.out.println("zad1: "+wstep2.removeDuplicateAndSort(Arrays.asList(tabInt5.clone())));
         System.out.println("zad2: ");
         wstep2.sortCars();
+        wstep2.zad3();
     }
 
     static private int middleIndex(Integer[] tab) {

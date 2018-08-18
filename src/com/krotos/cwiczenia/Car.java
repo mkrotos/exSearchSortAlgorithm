@@ -1,4 +1,4 @@
-package com.krotos;
+package com.krotos.cwiczenia;
 
 import java.time.LocalDate;
 

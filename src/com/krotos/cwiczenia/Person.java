@@ -1,9 +1,9 @@
-package com.krotos;
+package com.krotos.cwiczenia;
 
 public class Person {
-    String name;
+    public String name;
     String surname;
-    int age;
+    public int age;
 
     public Person(String name, String surname, int age) {
         this.name = name;

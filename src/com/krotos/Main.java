@@ -1,5 +1,7 @@
 package com.krotos;
 
+import com.krotos.cwiczenia.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -93,6 +95,13 @@ public class Main {
         QuickSort quickSort = new QuickSort();
         System.out.println("tab5: "+Arrays.toString(tabInt5));
         System.out.println(Arrays.toString(quickSort.sort(tabInt5.clone())));
+
+        System.out.println("Binary tree");
+        BinaryTree binaryTree=new BinaryTree(tabInt5.clone());
+        System.out.println( binaryTree.getFatherInd(3));
+        System.out.println( binaryTree.getRightSonInd(3));
+        System.out.println( binaryTree.isLeaf(8));
+
 
     }
 

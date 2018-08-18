@@ -1,6 +1,5 @@
-package com.krotos;
+package com.krotos.cwiczenia;
 
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;

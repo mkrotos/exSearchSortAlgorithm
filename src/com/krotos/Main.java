@@ -56,20 +56,22 @@ public class Main {
         System.out.println("Bubel 2 sort: " + Arrays.toString(bubbleSort2.sort(tabInt3)));
 
         System.out.println("Selection sort");
-        SelectionSort selectionSort=new SelectionSort();
+        SelectionSort selectionSort = new SelectionSort();
         Integer[] tabInt4 = {123, 4, 2, 235, 5, 23, 3};
         System.out.println(Arrays.toString(tabInt4));
-        System.out.println("min:"+ selectionSort.findMin(tabInt4));
-        selectionSort.findMinBetween(tabInt4,3,5);
-        System.out.println("Selection sort: "+ Arrays.toString(selectionSort.sort(tabInt4)));
+        System.out.println("min:" + selectionSort.findMin(tabInt4));
+        selectionSort.findMinBetween(tabInt4, 3, 5);
+        System.out.println("Selection sort: " + Arrays.toString(selectionSort.sort(tabInt4)));
 
         System.out.println("Merge sort");
-        MergeSort mergeSort=new MergeSort();
-        Integer[] tabInt5 = {123, 4, 2, 235, 5, 23, 3, 6, 45};
+        MergeSort mergeSort = new MergeSort();
+        Integer[] tabInt5 = {123, 4, 2, 235, 5, 23, 3, 6};
         mergeSort.divideTab(tabInt5);
-        System.out.println("tab3: "+Arrays.toString(tabInt3));
-        System.out.println("tab4: "+Arrays.toString(tabInt4));
+        System.out.println("tab3: " + Arrays.toString(tabInt3));
+        System.out.println("tab4: " + Arrays.toString(tabInt4));
         mergeSort.mergeSortedTabs(tabInt3, tabInt4);
+        System.out.println("tab5: " + Arrays.toString(tabInt5));
+        System.out.println("Merge sort: " + Arrays.toString(mergeSort.sort(tabInt5)));
 
     }
 

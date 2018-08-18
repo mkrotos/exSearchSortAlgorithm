@@ -11,7 +11,8 @@ public class MergeSort implements SortingAlgorithm {
 
     @Override
     public Integer[] sort(Integer[] input) {
-        return new Integer[0];
+
+        return mergeSort(input, 0, input.length - 1);
     }
 
     public void divideTab(Integer[] tab) {
@@ -67,4 +68,57 @@ public class MergeSort implements SortingAlgorithm {
         System.out.println("Merged: " + Arrays.toString(mergedTab));
         return mergedTab;
     }
+
+    private Integer[] mergeSort(Integer[] tab, int l, int r) {
+        if (l < r) {
+            int mid = (l + r) / 2;
+            mergeSort(tab, l, mid);
+            mergeSort(tab, mid + 1, r);
+            merge2(tab, l, mid, r);
+        }
+        return tab;
+    }
+
+    private Integer[] merge(Integer[] A, int left, int mid, int right) {
+        int i;
+        int j;
+        Integer[] T = new Integer[A.length];
+        for (i = mid + 1; i > left; i--) {
+            T[i - 1] = A[i - 1];
+        }
+        for (j = mid; j < right; j++) {
+            T[right + mid - j] = A[j + 1];
+        }
+        for (int k = left; k <= right; k++) {
+            if (T[j] < T[i]) {
+                A[k] = T[j];
+                j--;
+            } else {
+                A[k] = T[i];
+                i++;
+            }
+        }
+        return A;
+    }
+
+    private Integer[] merge2(Integer[] A, int left, int mid, int right) {
+        Integer[] T = new Integer[A.length];
+        int leftIndex = left;
+        int rightIndex = mid + 1;
+        for (int k = left; k <= right; k++) {
+            if (leftIndex > mid || (rightIndex <= right && A[rightIndex] < A[leftIndex])) {
+                T[k] = A[rightIndex];
+                rightIndex = rightIndex + 1;
+            } else {
+                T[k] = A[leftIndex];
+                leftIndex = leftIndex + 1;
+            }
+        }
+        for (int k = left; k <= right; k++) {
+            A[k] = T[k];
+        }
+
+        return A;
+    }
 }
+

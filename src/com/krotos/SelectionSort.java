@@ -45,7 +45,7 @@ public class SelectionSort implements SortingAlgorithm {
                 ind = i;
             }
         }
-        System.out.println("index: "+ind+", min between: "+min);
+        System.out.println("index: " + ind + ", min between: " + min);
         return min;
     }
 }

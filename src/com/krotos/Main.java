@@ -79,6 +79,15 @@ public class Main {
         System.out.println("zad2: ");
         wstep2.sortCars();
         wstep2.zad3();
+
+        System.out.println("Wstep 3");
+        System.out.println("tab: "+ Arrays.toString(tabInt5));
+        Wstep3 wstep3=new Wstep3();
+        wstep3.findMid(tabInt5);
+        wstep3.randomEl(tabInt5);
+        System.out.println("zad 3: "+ Arrays.toString(wstep3.lowerTab(tabInt5.clone())));
+        System.out.println("zad 4: "+ Arrays.toString(wstep3.higherTab(tabInt5.clone())));
+
     }
 
     static private int middleIndex(Integer[] tab) {
@@ -130,4 +139,5 @@ public class Main {
         }
         System.out.println(tabP[index]);
     }
+
 }

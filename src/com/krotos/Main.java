@@ -87,6 +87,7 @@ public class Main {
         wstep3.randomEl(tabInt5);
         System.out.println("zad 3: "+ Arrays.toString(wstep3.lowerTab(tabInt5.clone())));
         System.out.println("zad 4: "+ Arrays.toString(wstep3.higherTab(tabInt5.clone())));
+        wstep3.nearlySort(tabInt5.clone());
 
     }
 

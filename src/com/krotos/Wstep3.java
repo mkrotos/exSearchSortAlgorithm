@@ -1,13 +1,12 @@
 package com.krotos;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.lang.reflect.Array;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Wstep3 {
-    int randEl;
+    private int randEl;
 
     public int findMid(Integer[] tab){
         int mid=tab.length/2;
@@ -25,7 +24,7 @@ public class Wstep3 {
 
     public Integer[] lowerTab(Integer[] tab){
         List<Integer> tempList=new ArrayList<>();
-        tempList= Arrays.asList(tab).stream().filter(el->el<=randEl).collect(Collectors.toList());
+        tempList= Arrays.asList(tab).stream().filter(el->el<randEl).collect(Collectors.toList());
         Integer[] newTab=new Integer[tempList.size()];
         newTab=tempList.toArray(newTab);
 
@@ -40,6 +39,29 @@ public class Wstep3 {
         return newTab;
     }
 
+    public Integer[] nearlySort(Integer[] tab){
+        int midIndex=tab.length/2;
+        int midEl=tab[midIndex];
 
+        List<Integer> lowerList=new ArrayList<>();
+        List<Integer> midList=new ArrayList<>();
+        List<Integer> higherList=new ArrayList<>();
+        List<Integer> finalList=new ArrayList<>();
+
+
+        midList=Arrays.asList(tab).stream().filter(el->el==midEl).collect(Collectors.toList());
+        lowerList=Arrays.asList(tab).stream().filter(el->el<midEl).collect(Collectors.toList());
+        higherList=Arrays.asList(tab).stream().filter(el->el>midEl).collect(Collectors.toList());
+
+        Integer[] newTab=new Integer[tab.length];
+
+        finalList=lowerList;
+        finalList.addAll(midList);
+        finalList.addAll(higherList);
+        newTab=finalList.toArray(newTab);
+
+        System.out.println(Arrays.toString(newTab));
+        return newTab;
+    }
 
 }

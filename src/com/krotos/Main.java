@@ -65,14 +65,19 @@ public class Main {
 
         System.out.println("Merge sort");
         MergeSort mergeSort = new MergeSort();
-        Integer[] tabInt5 = {123, 4, 2, 235, 5, 23, 3, 6};
+        Integer[] tabInt5 = {123, 4, 2, 235, 5, 23, 3, 6, 6, 6, 6};
         mergeSort.divideTab(tabInt5);
         System.out.println("tab3: " + Arrays.toString(tabInt3));
         System.out.println("tab4: " + Arrays.toString(tabInt4));
         mergeSort.mergeSortedTabs(tabInt3, tabInt4);
         System.out.println("tab5: " + Arrays.toString(tabInt5));
-        System.out.println("Merge sort: " + Arrays.toString(mergeSort.sort(tabInt5)));
+        System.out.println("Merge sort: " + Arrays.toString(mergeSort.sort(tabInt5.clone())));
 
+        System.out.println("Wstep 2");
+        Wstep2 wstep2 = new Wstep2();
+        System.out.println("zad1: "+wstep2.removeDuplicateAndSort(Arrays.asList(tabInt5.clone())));
+        System.out.println("zad2: ");
+        wstep2.sortCars();
     }
 
     static private int middleIndex(Integer[] tab) {

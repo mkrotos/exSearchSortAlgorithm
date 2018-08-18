@@ -69,12 +69,12 @@ public class MergeSort implements SortingAlgorithm {
         return mergedTab;
     }
 
-    private Integer[] mergeSort(Integer[] tab, int l, int r) {
-        if (l < r) {
-            int mid = (l + r) / 2;
-            mergeSort(tab, l, mid);
-            mergeSort(tab, mid + 1, r);
-            merge2(tab, l, mid, r);
+    private Integer[] mergeSort(Integer[] tab, int left, int right) {
+        if (left < right) {
+            int mid = (left + right) / 2;
+            mergeSort(tab, left, mid);
+            mergeSort(tab, mid + 1, right);
+            merge2(tab, left, mid, right);
         }
         return tab;
     }
@@ -108,10 +108,10 @@ public class MergeSort implements SortingAlgorithm {
         for (int k = left; k <= right; k++) {
             if (leftIndex > mid || (rightIndex <= right && A[rightIndex] < A[leftIndex])) {
                 T[k] = A[rightIndex];
-                rightIndex = rightIndex + 1;
+                rightIndex++;
             } else {
                 T[k] = A[leftIndex];
-                leftIndex = leftIndex + 1;
+                leftIndex++;
             }
         }
         for (int k = left; k <= right; k++) {

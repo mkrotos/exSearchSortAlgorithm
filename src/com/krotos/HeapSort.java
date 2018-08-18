@@ -42,17 +42,17 @@ public class HeapSort implements SortingAlgorithm {
 
     private Integer[] budowaKopca(Integer[] input) {
         for (int i = 1; i < input.length; i++) {
-            int j = i;
-            int k = getFatherInd(j);
-            int x = input[i];
-            while (k >= 0 && input[k] < x) {
-                int temp = input[j];
-                input[j] = input[k];
-                input[k] = temp;
-                j = k;
-                k = getFatherInd(j);
+            int actualInd = i;
+            int fatherInd = getFatherInd(actualInd);
+            int actualValue = input[i];
+            while (fatherInd >= 0 && input[fatherInd] < actualValue) {
+                int temp = input[actualInd];
+                input[actualInd] = input[fatherInd];
+                input[fatherInd] = temp;
+                actualInd = fatherInd;
+                fatherInd = getFatherInd(actualInd);
             }
-            input[j] = x;
+            input[actualInd] = actualValue;
         }
         return input;
     }

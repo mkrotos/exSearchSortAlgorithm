@@ -23,12 +23,20 @@ public class Wstep2 {
 
     public void sortCars() {
         List<Car> list = listOfCars();
+        
         System.out.println("po dacie: ");
-        list.stream().sorted(Comparator.comparing(car -> car.productionDate)).forEach(car -> System.out.println(car));
+        list.stream().sorted(Comparator.comparing(car -> car.productionDate))
+            .forEach(car -> System.out.println(car));
+        
         System.out.println("po koniach: ");
-        list.stream().sorted(Comparator.comparing(car -> car.engine.getHorsePower())).forEach(System.out::println);
+        list.stream().sorted(Comparator.comparing(car -> car.engine.getHorsePower()))
+            .forEach(System.out::println);
+        
         System.out.println("po wszystkim");
-        list.stream().sorted(Comparator.comparing(car -> car.name)).sorted(Comparator.comparing(car -> car.engine.getHorsePower())).sorted(Comparator.comparing(car -> car.productionDate)).forEach(System.out::println);
+        list.stream().sorted(Comparator.comparing(car -> car.name))
+            .sorted(Comparator.comparing(car -> car.engine.getHorsePower()))
+            .sorted(Comparator.comparing(car -> car.productionDate))
+            .forEach(System.out::println);
     }
 
     private int[] initTab() {

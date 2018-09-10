@@ -1,2 +1,2 @@
 # exSearchSortAlgorithm
-Various search and sorting algorithms
+Various searching and sorting algorithms

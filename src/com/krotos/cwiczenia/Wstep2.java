@@ -23,6 +23,7 @@ public class Wstep2 {
 
     public void sortCars() {
         List<Car> list = listOfCars();
+        
         System.out.println("po dacie: ");
         list.stream()
                 .sorted(Comparator.comparing(car -> car.productionDate))
@@ -37,6 +38,7 @@ public class Wstep2 {
                 .sorted(Comparator.comparing(car -> car.engine.getHorsePower()))
                 .sorted(Comparator.comparing(car -> car.productionDate))
                 .forEach(System.out::println);
+
     }
 
     private int[] initTab() {

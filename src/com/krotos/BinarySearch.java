@@ -3,6 +3,10 @@ package com.krotos;
 import java.util.List;
 
 public class BinarySearch implements SearchAlgorithm {
+
+    private static final String ASCENDING = "Ascending";
+    private static final String DESCENDING = "Descending";
+
     @Override
     public Integer search(Integer value, List<Integer> input) {
         return null;
@@ -11,11 +15,11 @@ public class BinarySearch implements SearchAlgorithm {
     @Override
     public Integer search(Integer value, Integer[] input) {
         if (input[0] < input[1]) {
-            System.out.println("Asc");
+            System.out.println(ASCENDING);
             System.out.println("Iter: " + binarySearchAscendIter(input, value));
             return binarySearchAscendRec(input, value, 0, input.length - 1);
         } else {
-            System.out.println("Desc");
+            System.out.println(DESCENDING);
             return binarySearchDescendRec(input, value, 0, input.length - 1);
         }
 

@@ -8,7 +8,7 @@ public class Wstep2 {
 
     public List<Integer> removeDuplicateAndSort(List<Integer> list) {
         System.out.println("List " + list);
-        return list.stream().collect(Collectors.toSet()).stream().sorted().collect(Collectors.toList());
+        return new HashSet<>(list).stream().sorted().collect(Collectors.toList());
     }
 
     private List<Car> listOfCars() {
@@ -24,11 +24,19 @@ public class Wstep2 {
     public void sortCars() {
         List<Car> list = listOfCars();
         System.out.println("po dacie: ");
-        list.stream().sorted(Comparator.comparing(car -> car.productionDate)).forEach(car -> System.out.println(car));
+        list.stream()
+                .sorted(Comparator.comparing(car -> car.productionDate))
+                .forEach(car -> System.out.println(car));
         System.out.println("po koniach: ");
-        list.stream().sorted(Comparator.comparing(car -> car.engine.getHorsePower())).forEach(System.out::println);
+        list.stream()
+                .sorted(Comparator.comparing(car -> car.engine.getHorsePower()))
+                .forEach(System.out::println);
         System.out.println("po wszystkim");
-        list.stream().sorted(Comparator.comparing(car -> car.name)).sorted(Comparator.comparing(car -> car.engine.getHorsePower())).sorted(Comparator.comparing(car -> car.productionDate)).forEach(System.out::println);
+        list.stream()
+                .sorted(Comparator.comparing(car -> car.name))
+                .sorted(Comparator.comparing(car -> car.engine.getHorsePower()))
+                .sorted(Comparator.comparing(car -> car.productionDate))
+                .forEach(System.out::println);
     }
 
     private int[] initTab() {
@@ -40,12 +48,12 @@ public class Wstep2 {
         System.out.println("stara: "+Arrays.toString(tab));
         Map<Integer, Integer> map = new HashMap<>();
         int temp;
-        for (int i = 0; i < tab.length; i++) {
-            if (map.containsKey(tab[i])) {
-                temp = map.get(tab[i]);
-                map.put(tab[i], ++temp);
+        for (int aTab : tab) {
+            if (map.containsKey(aTab)) {
+                temp = map.get(aTab);
+                map.put(aTab, ++temp);
             } else {
-                map.put(tab[i], 1);
+                map.put(aTab, 1);
             }
         }
         map.keySet().stream().sorted().collect(Collectors.toList());

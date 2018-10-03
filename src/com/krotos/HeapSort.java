@@ -10,12 +10,12 @@ public class HeapSort implements SortingAlgorithm {
 
     @Override
     public Integer[] sort(Integer[] input) {
-        budowaKopca(input);
-        rozbieranieKopca(input);
+        buildHeap(input);
+        dismountHeap(input);
         return input;
     }
 
-    private Integer[] rozbieranieKopca(Integer[] input) {
+    private Integer[] dismountHeap(Integer[] input) {
         for (int i = input.length - 1; i > 0; i--) {
             int temp = input[0];
             input[0] = input[i];
@@ -40,7 +40,7 @@ public class HeapSort implements SortingAlgorithm {
         return input;
     }
 
-    private Integer[] budowaKopca(Integer[] input) {
+    private Integer[] buildHeap(Integer[] input) {
         for (int i = 1; i < input.length; i++) {
             int actualInd = i;
             int fatherInd = getFatherInd(actualInd);

@@ -22,7 +22,7 @@ public class Wstep3 {
 
     public Integer[] lowerTab(Integer[] tab){
         List<Integer> tempList=new ArrayList<>();
-        tempList= Arrays.asList(tab).stream().filter(el->el<randEl).collect(Collectors.toList());
+        tempList= Arrays.stream(tab).filter(el->el<randEl).collect(Collectors.toList());
         Integer[] newTab=new Integer[tempList.size()];
         newTab=tempList.toArray(newTab);
 
@@ -30,7 +30,7 @@ public class Wstep3 {
     }
     public Integer[] higherTab(Integer[] tab){
         List<Integer> tempList=new ArrayList<>();
-        tempList= Arrays.asList(tab).stream().filter(el->el>randEl).collect(Collectors.toList());
+        tempList= Arrays.stream(tab).filter(el->el>randEl).collect(Collectors.toList());
         Integer[] newTab=new Integer[tempList.size()];
         newTab=tempList.toArray(newTab);
 
@@ -41,10 +41,10 @@ public class Wstep3 {
         int midIndex=tab.length/2;
         int midEl=tab[midIndex];
 
-        List<Integer> lowerList=new ArrayList<>();
-        List<Integer> midList=new ArrayList<>();
-        List<Integer> higherList=new ArrayList<>();
-        List<Integer> finalList=new ArrayList<>();
+        List<Integer> lowerList;
+        List<Integer> midList;
+        List<Integer> higherList;
+        List<Integer> finalList;
 
         midList=Arrays.asList(tab).stream().filter(el->el==midEl).collect(Collectors.toList());
         lowerList=Arrays.asList(tab).stream().filter(el->el<midEl).collect(Collectors.toList());

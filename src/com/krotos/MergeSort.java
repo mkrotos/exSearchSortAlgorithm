@@ -79,46 +79,46 @@ public class MergeSort implements SortingAlgorithm {
         return tab;
     }
 
-    private Integer[] merge(Integer[] A, int left, int mid, int right) {
+    private Integer[] merge(Integer[] originalTab, int left, int mid, int right) {
         int i;
         int j;
-        Integer[] T = new Integer[A.length];
+        Integer[] tempTab = new Integer[originalTab.length];
         for (i = mid + 1; i > left; i--) {
-            T[i - 1] = A[i - 1];
+            tempTab[i - 1] = originalTab[i - 1];
         }
         for (j = mid; j < right; j++) {
-            T[right + mid - j] = A[j + 1];
+            tempTab[right + mid - j] = originalTab[j + 1];
         }
         for (int k = left; k <= right; k++) {
-            if (T[j] < T[i]) {
-                A[k] = T[j];
+            if (tempTab[j] < tempTab[i]) {
+                originalTab[k] = tempTab[j];
                 j--;
             } else {
-                A[k] = T[i];
+                originalTab[k] = tempTab[i];
                 i++;
             }
         }
-        return A;
+        return originalTab;
     }
 
-    private Integer[] merge2(Integer[] A, int left, int mid, int right) {
-        Integer[] T = new Integer[A.length];
+    private Integer[] merge2(Integer[] originalTab, int left, int mid, int right) {
+        Integer[] tempTab = new Integer[originalTab.length];
         int leftIndex = left;
         int rightIndex = mid + 1;
         for (int k = left; k <= right; k++) {
-            if (leftIndex > mid || (rightIndex <= right && A[rightIndex] < A[leftIndex])) {
-                T[k] = A[rightIndex];
+            if (leftIndex > mid || (rightIndex <= right && originalTab[rightIndex] < originalTab[leftIndex])) {
+                tempTab[k] = originalTab[rightIndex];
                 rightIndex++;
             } else {
-                T[k] = A[leftIndex];
+                tempTab[k] = originalTab[leftIndex];
                 leftIndex++;
             }
         }
         for (int k = left; k <= right; k++) {
-            A[k] = T[k];
+            originalTab[k] = tempTab[k];
         }
 
-        return A;
+        return originalTab;
     }
 }
 
